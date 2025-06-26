@@ -1,16 +1,197 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Menu VT", "DarkTheme")
+local Window = Library.CreateLib("Menu VY09", "DarkTheme")
 
+-- Cập nhật HumanoidRootPart sau khi nhân vật reset
+local player = game.Players.LocalPlayer
+local hrp = nil
+
+local function CapNhatHRP()
+    local char = player.Character or player.CharacterAdded:Wait()
+    hrp = char:WaitForChild("HumanoidRootPart")
+end
+
+player.CharacterAdded:Connect(CapNhatHRP)
+CapNhatHRP()
+
+-- TAB Dịch chuyển
 local Tab1 = Window:NewTab("Dịch chuyển")
 local Section1 = Tab1:NewSection("Vị trí phổ biến")
-Section1:NewButton("Tới Spawn", "Chức năng chưa thêm", function() end)
-Section1:NewButton("Tới chỗ bí mật", "Chức năng chưa thêm", function() end)
 
+-- Thêm nút bay tới toạ độ (bay từ từ)
+Section1:NewButton("Đảo Sa Mạc", "Bay đến vị trí bí mật", function()
+    if hrp then
+        local target = Vector3.new(1216.343994140625, 32.102996826171875, 4366.68798828125) -- thay đổi tuỳ tọa độ bạn muốn
+        local speed = 250 -- tốc độ bay
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - target).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(target)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Đảo Người Cá", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(3856.487060546875, 4.4799957275390625, -1926.1629638671875) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Đảo Băng", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(1104.8050537109375, 3.6510009765625, -1167.791015625) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Đảo Của cyborc", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(5713.72314453125, 283.8349914550781, 4392.4111328125) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Đảo Dung Nham", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(-5224.18017578125, 7.75, 8469.6533203125) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Đảo Hải Quân", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(-4925.57177734375, 37.600006103515625, 4426.0849609375) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Đảo Tân Thủ Ở Hải Quân", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(-2616.94189453125, 3.2400054931640625, 2041.2919921875) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Đảo Trung Tâm", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(-770.8579711914062, 6.350006103515625, 1654.7540283203125) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Sky", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(-4990.58984375, 342.739990234375, -3000.26708984375) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Sky 1", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(-4662.94580078125, 907.10498046875, -1777.54296875) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Sky 2", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(-7871.68603515625, 5544.58984375, -333.27099609375) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Đảo Tân Thủ Hải Tặc", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(1068.0799560546875, 32.67500305175781, 1442.6810302734375) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Đảo Khỉ", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(-1368.654052734375, 62.2030029296875, -56.94500732421875) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+
+Section1:NewButton("Đảo Ngục Tù", "Bay tới vị trí spawn", function()
+    if hrp then
+        local spawnPos = Vector3.new(4857.47705078125, 4.350006103515625, 751.8359985351562) -- vị trí spawn bạn muốn
+        local speed = 250
+
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new((hrp.Position - spawnPos).Magnitude / speed, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(spawnPos)})
+        tween:Play()
+    end
+end)
+-- TAB Farm
 local Tab2 = Window:NewTab("Farm")
 local Section2 = Tab2:NewSection("Chế độ tự động")
 Section2:NewToggle("Auto Farm", "Chức năng chưa thêm", function(value) end)
 Section2:NewToggle("Auto Click", "Chức năng chưa thêm", function(value) end)
 
+-- TAB Cài đặt
 local Tab3 = Window:NewTab("Cài đặt")
 local Section3 = Tab3:NewSection("Khác")
 Section3:NewSlider("Speed", "Chức năng chưa thêm", 500, 16, function(value) end)
