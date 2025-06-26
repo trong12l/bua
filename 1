@@ -1,6 +1,17 @@
-Config = {
-    namescript = "Bựa nhất",
-    logscript = "82028278903228",
-    tacgia = "Trong"
-}
-loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/refs/heads/main/Evade.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Menu VT", "DarkTheme")
+
+local Tab1 = Window:NewTab("Dịch chuyển")
+local Section1 = Tab1:NewSection("Vị trí phổ biến")
+Section1:NewButton("Tới Spawn", "Chức năng chưa thêm", function() end)
+Section1:NewButton("Tới chỗ bí mật", "Chức năng chưa thêm", function() end)
+
+local Tab2 = Window:NewTab("Farm")
+local Section2 = Tab2:NewSection("Chế độ tự động")
+Section2:NewToggle("Auto Farm", "Chức năng chưa thêm", function(value) end)
+Section2:NewToggle("Auto Click", "Chức năng chưa thêm", function(value) end)
+
+local Tab3 = Window:NewTab("Cài đặt")
+local Section3 = Tab3:NewSection("Khác")
+Section3:NewSlider("Speed", "Chức năng chưa thêm", 500, 16, function(value) end)
+Section3:NewKeybind("Ẩn menu", "Chức năng chưa thêm", Enum.KeyCode.RightControl, function() end)
